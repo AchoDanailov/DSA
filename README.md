@@ -1,6 +1,6 @@
 # DSA Implementations
 
-This repository holds the implementations of DSA exercises I am practicing on while only using an LSP. 
+This repository holds the implementations of DSA exercises I am practicing on while only using an LSP and a debugger. 
 
 ## Personal objectives
 
