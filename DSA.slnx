@@ -1,2 +1,8 @@
 <Solution>
+  <Folder Name="/data_structures/">
+    <Project Path="data_structures/DSA.LinearDataStructures/DSA.LinearDataStructures.csproj" />
+  </Folder>
+  <Folder Name="/data_structures/tests/">
+    <Project Path="data_structures/tests/DSA.LinearDataStructures.Tests/DSA.LinearDataStructures.Tests.csproj" />
+  </Folder>
 </Solution>
