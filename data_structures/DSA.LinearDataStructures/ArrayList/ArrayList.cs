@@ -216,32 +216,19 @@ public class ArrayList<T> : IArrayList<T>
     private T[] ShiftElements(int index, Direction direction)
     {
         T[] temp = new T[this.Capacity];
-        if (direction == Direction.Left)
+        
+        for (int i = 0; i < this.Size; i++)
         {
-            for (int i = 0; i < this.Size; i++) 
+            if (i < index)
             {
-                if (i < index)
-                {
-                    temp[i] = this._innerArr[i];
-                }
-                else
-                {
-                    temp[i] = this._innerArr[i + 1];
-                }
+                temp[i] = this._innerArr[i];
             }
-        }
-        else 
-        {
-            for (int i = 0; i < this.Size; i++) 
+            else
             {
-                if (i < index)
-                {
-                    temp[i] = this._innerArr[i];
-                }
-                else
-                {
+                if (direction == Direction.Left)
+                    temp[i] = this._innerArr[i + 1];
+                else 
                     temp[i + 1] = this._innerArr[i];
-                }
             }
         }
 
