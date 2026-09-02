@@ -2,12 +2,24 @@
 
 This repository holds the implementations of DSA exercises I am practicing on while only using an LSP and a debugger. 
 
+## Project Structure
+
+```
+DSA/
+│
+├── data_structures/
+│   ├── DSA.LinearDataStructures
+│   └── tests
+│       └── DSA.LinearDataStructures.Tests
+```
+
+
 ## Personal objectives
 
 - Reviewing fundamentals (since I have gone through them once already when I was initially learning to code)
 - Going beyond fundamentals
 - Improving problem solving skills
-- Preparing for job interview skill evaluations on DSA
+- Preparing for job interview skill evaluations on DSA, OOP and the SOLID principles
 
 ## Personal motivations
 
