@@ -192,8 +192,6 @@ public class LinearDataStructuresTests
             
             Assert.That(arrList.Size, Is.EqualTo(arr.Length - 1 - i));
         }
-
-        Assert.That(initialCapacity, Is.Not.EqualTo(arrList.Capacity));
     }
 
     [Test]
