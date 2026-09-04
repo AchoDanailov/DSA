@@ -3,7 +3,7 @@ using DSA.LinearDataStructures.Nodes;
 
 namespace DSA.LinearDataStructures.Stack;
 
-public class SinglyListStack<T> : ISinglyListStack<T>
+public class SinglyLinkedListStack<T> : ISinglyLinkedListStack<T>
 {
     private ISinglyNode<T>? _head; 
 

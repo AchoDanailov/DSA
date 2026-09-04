@@ -1,7 +1,9 @@
 namespace DSA.LinearDataStructures.Interfaces;
 
-public interface ISinglyListStack<T>
+public interface ISinglyLinkedListStack<T>
 {
+    int Size { get; }
+
     bool Push(T value);
     T Pop();
     T Peek();
