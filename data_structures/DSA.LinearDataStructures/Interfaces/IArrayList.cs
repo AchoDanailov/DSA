@@ -1,6 +1,6 @@
 namespace DSA.LinearDataStructures.Interfaces;
 
-public interface IArrayList<T>
+public interface IArrayList<T> : IEnumerable<T>
 {
     int Size { get; }
     int Capacity { get; set; }

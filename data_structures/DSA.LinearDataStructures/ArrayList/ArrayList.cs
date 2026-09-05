@@ -1,3 +1,4 @@
+using System.Collections;
 using DSA.LinearDataStructures.Enums;
 using DSA.LinearDataStructures.Interfaces;
 
@@ -233,5 +234,47 @@ public class ArrayList<T> : IArrayList<T>
         }
 
         return temp;
+    }
+
+    public IEnumerator<T> GetEnumerator() 
+        => new ArrayList<T>.DefaultEnumerator(this);
+
+    IEnumerator IEnumerable.GetEnumerator() 
+        => this.GetEnumerator();
+
+    private class DefaultEnumerator : IEnumerator<T>
+    {
+        private ArrayList<T> _collection;
+        private int _index;
+        
+        public DefaultEnumerator(ArrayList<T> collection)
+        {
+            this._index = -1;
+            this._collection = collection;
+        }
+
+        public bool HasNext => this._index + 1 < this._collection.Size;
+        public T Current => this._collection[this._index];
+        object? IEnumerator.Current => this.Current;
+
+        public bool MoveNext()
+        {
+            if (!this.HasNext)
+                return false;
+                
+            this._index += 1;
+            return true;
+        }
+
+        public void Reset()
+        {
+            this._index = -1;
+        }
+        
+        public void Dispose()
+        {
+            this.Reset();
+            this._collection = null!;
+        }
     }
 }
