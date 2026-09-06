@@ -1,10 +1,11 @@
+using DSA.LinearDataStructures.Tests.Utils;
 using DSA.LinearDataStructures.ArrayList;
 using DSA.LinearDataStructures.Interfaces;
 
 namespace DSA.LinearDataStructures.Tests;
 
 [TestFixture]
-public class LinearDataStructuresTests
+public class ArrayListTests
 {
     [TestCase(0)]
     [TestCase(1)]
@@ -20,7 +21,7 @@ public class LinearDataStructuresTests
     [TestCase(5)]
     public void OnInstantiation_PassingACollection_WorksCorrectly(int size)
     {
-        int[] arr = RandomFilledIntArray(size);
+        int[] arr = ArrayHelpers.RandomFilledIntArray(size);
         IArrayList<int> arrList = new ArrayList<int>(arr);
 
         Assert.That(arrList.Size == size);
@@ -60,7 +61,7 @@ public class LinearDataStructuresTests
     [TestCase(2, 1)]
     public void ListWithSize_SettingCapacitySmallerThanSize_ShouldThrow(int size, int capacity)
     {
-        int[] arr = RandomFilledIntArray(size);
+        int[] arr = ArrayHelpers.RandomFilledIntArray(size);
         IArrayList<int> arrList = new ArrayList<int>(arr);
         Assert.Throws<IndexOutOfRangeException>(() => arrList.Capacity = capacity);
     }
@@ -70,9 +71,9 @@ public class LinearDataStructuresTests
     [TestCase(50, 10)]
     public void Add_ShouldWorkCorrectly(int size, int numberOfTimesAdding)
     {
-        int[] arr = RandomFilledIntArray(size);
+        int[] arr = ArrayHelpers.RandomFilledIntArray(size);
         IArrayList<int> arrayList = new ArrayList<int>(arr);
-        int[] numbersToAdd = RandomFilledIntArray(numberOfTimesAdding);
+        int[] numbersToAdd = ArrayHelpers.RandomFilledIntArray(numberOfTimesAdding);
 
         for (int i = 0; i < numbersToAdd.Length; i++)
         {
@@ -92,7 +93,7 @@ public class LinearDataStructuresTests
     [TestCase(10, 50)]
     public void Insert_WhenPassedOutOfBoundsIndex_ShouldThrow(int size, int index) 
     {
-        int[] arr = RandomFilledIntArray(length: size);
+        int[] arr = ArrayHelpers.RandomFilledIntArray(length: size);
         ArrayList<int> arrayList = new ArrayList<int>(arr);
 
         Assert.Throws<IndexOutOfRangeException>(() => arrayList.Insert(index, Random.Shared.Next()));
@@ -102,7 +103,7 @@ public class LinearDataStructuresTests
     [TestCase(2, 8, 1)]
     public void Insert_WorksCorrectly(int size, int capacity, int index)
     {
-        int[] arr = RandomFilledIntArray(length: size);
+        int[] arr = ArrayHelpers.RandomFilledIntArray(length: size);
         ArrayList<int> arrayList = new ArrayList<int>(arr);
         arrayList.Capacity = capacity;
 
@@ -116,11 +117,11 @@ public class LinearDataStructuresTests
     [Test]
     public void Insert_MultipleTimes_WorksCorrectly()
     {
-        int[] arr = RandomFilledIntArray(
+        int[] arr = ArrayHelpers.RandomFilledIntArray(
             length: 50,
             randomnessLowerThreshold: 0,
             randomnessUpperThreshold: Random.Shared.Next() + 1);
-        int[] insertNums = RandomFilledIntArray(
+        int[] insertNums = ArrayHelpers.RandomFilledIntArray(
             length: 50,
             randomnessLowerThreshold: 0,
             randomnessUpperThreshold: Random.Shared.Next() + 1);
@@ -146,7 +147,7 @@ public class LinearDataStructuresTests
     [TestCase(0, 0)]
     public void Remove_WhenPassedIndexOutOfBounds_ShouldThrow(int index, int size)
     {
-        int[] arr = RandomFilledIntArray(length: size);
+        int[] arr = ArrayHelpers.RandomFilledIntArray(length: size);
         ArrayList<int> arrList = new ArrayList<int>(arr);
 
         Assert.Throws<IndexOutOfRangeException>(() => arrList.Remove(index));
@@ -156,7 +157,7 @@ public class LinearDataStructuresTests
     [TestCase(3, 7, 1)]
     public void Remove_ShouldWorkCorrectly(int size, int capacity, int index)
     {
-        int[] arr = RandomFilledIntArray(length: size);
+        int[] arr = ArrayHelpers.RandomFilledIntArray(length: size);
         ArrayList<int> arrList = new ArrayList<int>(arr);
         arrList.Capacity = capacity;
 
@@ -176,7 +177,7 @@ public class LinearDataStructuresTests
     [Test]
     public void Remove_MultipleTimes_ShouldWorkCorrectly()
     {
-        int[] arr = RandomFilledIntArray(
+        int[] arr = ArrayHelpers.RandomFilledIntArray(
             length: 50,
             randomnessLowerThreshold: 0,
             randomnessUpperThreshold: Random.Shared.Next() + 1);
@@ -197,7 +198,7 @@ public class LinearDataStructuresTests
     [Test]
     public void IndexOf_WhenElementNotFound_ReturnsMinusOne()
     {
-        int[] arr = RandomFilledIntArray(
+        int[] arr = ArrayHelpers.RandomFilledIntArray(
             length: Random.Shared.Next(maxValue: 100),
             randomnessLowerThreshold: 0,
             randomnessUpperThreshold: 50);
@@ -221,7 +222,7 @@ public class LinearDataStructuresTests
     [Test]
     public void Contains_WhenElementNotFound_ReturnsFalse()
     {
-        int[] arr = RandomFilledIntArray(
+        int[] arr = ArrayHelpers.RandomFilledIntArray(
             length: 50,
             randomnessLowerThreshold: 0,
             randomnessUpperThreshold: 50);
@@ -234,7 +235,7 @@ public class LinearDataStructuresTests
     [Test]
     public void Contains_WorksCorrectly()
     {
-        int[] arr = RandomFilledIntArray();
+        int[] arr = ArrayHelpers.RandomFilledIntArray();
         ArrayList<int> arrList = new ArrayList<int>(arr);
 
         int numToInsert = Random.Shared.Next();
@@ -246,7 +247,7 @@ public class LinearDataStructuresTests
     [Test]
     public void IsEmpty_WhenNotEmpty_ReturnsFalse()
     {
-        int[] arr = RandomFilledIntArray();
+        int[] arr = ArrayHelpers.RandomFilledIntArray();
         ArrayList<int> arrList = new ArrayList<int>(arr);
         
         Assert.That(arrList.IsEmpty(), Is.False);
@@ -257,35 +258,5 @@ public class LinearDataStructuresTests
     {
         ArrayList<int> arrList = new ArrayList<int>();
         Assert.That(arrList.IsEmpty(), Is.True);
-    }
-
-    private static int[] RandomFilledIntArray(
-        int length = 4,
-        int randomnessLowerThreshold = 0,
-        int randomnessUpperThreshold = 100)
-    {
-        if (length < 0)
-        {
-            throw new ArgumentOutOfRangeException(
-                message: "Length can not be a negative number",
-                paramName: nameof(length));
-        }
-
-        if (randomnessLowerThreshold > randomnessUpperThreshold)
-        {
-            throw new ArgumentException(
-                message: "Lower randomness threshold can not be larger than the upper randomness threshold.",
-                paramName: $"{nameof(randomnessLowerThreshold)} and {nameof(randomnessUpperThreshold)}");
-        }
-
-        int[] arr = new int[length];
-        for (int i = 0; i < arr.Length; i++)
-        {
-            arr[i] = Random.Shared.Next(
-                minValue: randomnessLowerThreshold,
-                maxValue: randomnessUpperThreshold);
-        }
-
-        return arr;
     }
 }
