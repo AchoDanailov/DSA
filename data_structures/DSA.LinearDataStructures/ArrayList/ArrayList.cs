@@ -108,7 +108,7 @@ public class ArrayList<T> : IArrayList<T>
         if (this.IsGrowthNeeded()) 
             this._innerArr = this.Grow();
         
-        this._innerArr = this.ShiftElements(index, Direction.Right);
+        this._innerArr = this.ShiftElements(index, ShiftDirection.Right);
         this._innerArr[index] = element;
         this.Size += 1;
         return true;
@@ -121,7 +121,7 @@ public class ArrayList<T> : IArrayList<T>
             throw new IndexOutOfRangeException(nameof(index));
 
         T elementToRemove = this._innerArr[index];
-        this._innerArr = this.ShiftElements(index, Direction.Left);
+        this._innerArr = this.ShiftElements(index, ShiftDirection.Left);
         this.Size -= 1;
 
         if (this.IsShrinkNeeded())
@@ -214,7 +214,7 @@ public class ArrayList<T> : IArrayList<T>
         return false;
     }
 	
-    private T[] ShiftElements(int index, Direction direction)
+    private T[] ShiftElements(int index, ShiftDirection direction)
     {
         T[] temp = new T[this.Capacity];
         
@@ -226,7 +226,7 @@ public class ArrayList<T> : IArrayList<T>
             }
             else
             {
-                if (direction == Direction.Left)
+                if (direction == ShiftDirection.Left)
                     temp[i] = this._innerArr[i + 1];
                 else 
                     temp[i + 1] = this._innerArr[i];

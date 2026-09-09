@@ -5,7 +5,6 @@ namespace DSA.LinearDataStructures.ArrayDeque;
 public class ArrayDeque<T> : IArrayDeque<T>
 {
     public ArrayDeque() { }
-    public ArrayDeque(int capacity) { }
     public ArrayDeque(IEnumerable<T> collection) { }
 
     public T this[int index]
@@ -14,15 +13,9 @@ public class ArrayDeque<T> : IArrayDeque<T>
         set => throw new NotImplementedException();
     }
 
-    public int Size { get; }
-    public int Capacity { get; set; }
+    public int Size { get; private set; }
 
     public bool Add(T element)
-    {
-        throw new NotImplementedException();
-    }
-
-    public bool Enqueue(T element)
     {
         throw new NotImplementedException();
     }
@@ -32,27 +25,7 @@ public class ArrayDeque<T> : IArrayDeque<T>
         throw new NotImplementedException();
     }
 
-    public bool AddLast(T element)
-    {
-        throw new NotImplementedException();
-    }
-
-    public bool Push(T element)
-    {
-        throw new NotImplementedException();
-    }
-
     public bool Insert(int index, T element)
-    {
-        throw new NotImplementedException();
-    }
-
-    public T Dequeue()
-    {
-        throw new NotImplementedException();
-    }
-
-    public T Pop()
     {
         throw new NotImplementedException();
     }
@@ -62,7 +35,7 @@ public class ArrayDeque<T> : IArrayDeque<T>
         throw new NotImplementedException();
     }
 
-    public T Remove(int index)
+    public T RemoveAt(int index)
     {
         throw new NotImplementedException();
     }
@@ -86,12 +59,7 @@ public class ArrayDeque<T> : IArrayDeque<T>
     {
         throw new NotImplementedException();
     }
-
-    public T Peek()
-    {
-        throw new NotImplementedException();
-    }
-
+    
     public int IndexOf(T element) 
     {
         throw new NotImplementedException();
