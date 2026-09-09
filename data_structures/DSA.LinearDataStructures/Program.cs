@@ -1,5 +1,4 @@
-﻿using DSA.LinearDataStructures.ArrayList;
-using DSA.LinearDataStructures.Interfaces;
+﻿using DSA.LinearDataStructures.ArrayDeque;
 
 namespace DSA.LinearDataStructures;
 
@@ -7,16 +6,12 @@ internal class Program
 {
     internal static void Main(string[] args)
     {
-        PrintLine();
-    }
+        ArrayDeque<int> deque = new ArrayDeque<int>();
+        for (int i = 0; i < 10; i++)
+            deque.Add(i);
 
-    private static void ArrayListEnumeratorTest()
-    {
-        IArrayList<int> arrayList = new ArrayList<int>() { 1, 2, 3, 4 };
-        foreach (int el in arrayList)
-        {
-            PrintLine(el);
-        }
+        foreach (int item in deque)
+            PrintLine(item);
     }
 
     private static void PrintLine(object? content = null, params object[] parameters)

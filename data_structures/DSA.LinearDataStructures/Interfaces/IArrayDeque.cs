@@ -1,6 +1,6 @@
 namespace DSA.LinearDataStructures.Interfaces;
 
-public interface IArrayDeque<T>
+public interface IArrayDeque<T> : IEnumerable<T>
 {
     T this[int index] { get; set; }
     int Size { get; }
