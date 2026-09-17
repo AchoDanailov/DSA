@@ -5,9 +5,10 @@
     <Project Path="data_structures\data_structures_implementations\DSA.BasicTreeDataStructure\DSA.BasicTreeDataStructure.csproj" />
   </Folder>
   <Folder Name="/data_structures/exercises/">
-    <Project Path="data_structures\excercises\DSA.LinearDataStructures.Exercises\DSA.LinearDataStructures.Exercises.csproj" />
+    <Project Path="data_structures\exercises\DSA.LinearDataStructures.Exercises\DSA.LinearDataStructures.Exercises.csproj" />
   </Folder>
   <Folder Name="/data_structures/tests/">
     <Project Path="data_structures/tests/DSA.LinearDataStructures.Tests/DSA.LinearDataStructures.Tests.csproj" />
+    <Project Path="data_structures/tests/DSA.TreeDataStructures.Tests/DSA.TreeDataStructures.Tests.csproj" />
   </Folder>
 </Solution>
