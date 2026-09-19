@@ -21,7 +21,7 @@ public class TheMatrixTests
         int startCol = 0;
 
         var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
-        theMatrix.SolveBfs();
+        theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
         Assert.That(str, Is.EqualTo(
@@ -48,7 +48,7 @@ public class TheMatrixTests
         int startCol = 1;
 
         var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
-        theMatrix.SolveBfs();
+        theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
         Assert.That(str, Is.EqualTo(
@@ -75,7 +75,7 @@ public class TheMatrixTests
         int startCol = 1;
 
         var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
-        theMatrix.SolveBfs();
+        theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
         Assert.That(str, Is.EqualTo(
@@ -102,7 +102,7 @@ public class TheMatrixTests
         int startCol = 1;
 
         var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
-        theMatrix.SolveBfs();
+        theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
         Assert.That(str, Is.EqualTo(
@@ -129,7 +129,7 @@ public class TheMatrixTests
         int startCol = 0;
 
         var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
-        theMatrix.SolveBfs();
+        theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
         Assert.That(str, Is.EqualTo(

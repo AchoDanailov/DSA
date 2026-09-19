@@ -12,9 +12,13 @@ public class Program
     private static void TheMatrix()
     {
         TheMatrix theMatrix = BuildTheMatrix();
-        theMatrix.SolveBfs();
+        SolveDfs(theMatrix);
+        // SolveBfs(theMatrix);
         Console.WriteLine(theMatrix.ToOutputString());
     }
+
+    private static void SolveDfs(TheMatrix theMatrix) => theMatrix.SolveDfs();
+    private static void SolveBfs(TheMatrix theMatrix) => theMatrix.SolveBfs();
 
     private static TheMatrix BuildTheMatrix()
     {
@@ -68,17 +72,25 @@ public class Program
         if (string.IsNullOrWhiteSpace(input))
             throw new ArgumentException("Input can not be empty");
 
-        int[] tokens = input.TrimEnd()
-            .Split(' ')
-            .Select(e => int.Parse(e))
-            .ToArray();
+        string[] tokens = input.TrimEnd().Split(' ');
         if (tokens.Length != 2)
         {
             throw new ArgumentException(
                 "Invalid arguments length.", nameof(input));
         }
 
-        return (tokens[0], tokens[1]);
+        int[] intTokens = new int[2];
+        for (int i = 0; i < tokens.Length; i++)
+        {
+            bool res = int.TryParse(tokens[i], out intTokens[i]);
+            if (res == false)
+            {
+                throw new ArgumentException(
+                    "Invalid arguments format.", nameof(input));
+            }
+        }
+
+        return (intTokens[0], intTokens[1]);
     }
 
     private static bool TryParseRow(string? input, int cols, out string row)

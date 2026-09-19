@@ -33,6 +33,26 @@ public class TheMatrix
         this._startChar = this._matrix[this._startRow][this._startCol];
     }
 
+    public void SolveDfs()
+    {
+        ValueTuple<int, int> currPosition 
+            = new ValueTuple<int, int>(this._startRow, this._startCol);
+        this.EvaluateAndFillIfNecessaryNextPositon(currPosition);
+    }
+
+    private void EvaluateAndFillIfNecessaryNextPositon((int rowIndex, int colIndex) position)
+    {
+        if (!this.IsInBounds(position) || !IsValid(this.CharAt(position)))
+            return;
+
+        this._matrix[position.rowIndex][position.colIndex] = this._fillChar;
+
+        this.EvaluateAndFillIfNecessaryNextPositon(NextIndex(Direction.Up, position));
+        this.EvaluateAndFillIfNecessaryNextPositon(NextIndex(Direction.Left, position));
+        this.EvaluateAndFillIfNecessaryNextPositon(NextIndex(Direction.Down, position));
+        this.EvaluateAndFillIfNecessaryNextPositon(NextIndex(Direction.Right, position));
+    }
+
     //NOTE: Valid positions are filled on Enqueue not on Dequeue.
     //The point of this is to prevent indices from getting Enqueued more than once (debugger or diagram needed to see/visualize this).
     public void SolveBfs()
