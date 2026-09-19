@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\data_structures_implementations\DSA.BasicTreeDataStructure\DSA.BasicTreeDataStructure.csproj" />
+    <ProjectReference Include="..\..\exercises\DSA.TreeDataStructures.Exercises\DSA.TreeDataStructures.Exercises.csproj" />
   </ItemGroup>
 
 </Project>

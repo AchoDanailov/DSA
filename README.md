@@ -13,13 +13,16 @@ DSA/
 ├── data_structures/
 │   │
 │   ├── data_structures_implementations/
-│   │   └── DSA.LinearDataStructures
+│   │   ├── DSA.LinearDataStructures
+│   │   └── DSA.BasicTreeDataStructure
 │   │
 │   ├── exercises
-│   │   └── DSA.LinearDataStructures.Exercises
+│   │   ├── DSA.LinearDataStructures.Exercises
+│   │   └── DSA.TreeDataStructures.Exercises
 │   │
-│   └── tests
-│       └── DSA.LinearDataStructures.Tests
+│   ├── tests
+│   │   ├── DSA.LinearDataStructures.Tests
+│   │   └── DSA.TreeDataStructures.Tests
 ```
 
 ---

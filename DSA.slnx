@@ -5,6 +5,7 @@
     <Project Path="data_structures\data_structures_implementations\DSA.BasicTreeDataStructure\DSA.BasicTreeDataStructure.csproj" />
   </Folder>
   <Folder Name="/data_structures/exercises/">
+    <Project Path="data_structures/exercises/DSA.TreeDataStructures.Exercises/DSA.TreeDataStructures.Exercises.csproj" />
     <Project Path="data_structures\exercises\DSA.LinearDataStructures.Exercises\DSA.LinearDataStructures.Exercises.csproj" />
   </Folder>
   <Folder Name="/data_structures/tests/">
