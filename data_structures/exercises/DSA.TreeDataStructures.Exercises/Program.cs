@@ -1,4 +1,5 @@
 ﻿using DSA.TreeDataStructures.Exercises.Matrix;
+using DSA.TreeDataStructures.Exercises.TreeEachLevelOfDepthIndented;
 
 namespace DSA.TreeDataStructures.Exercises;
 
@@ -6,9 +7,35 @@ public class Program
 {
     public static void Main()
     {
+        // TreeWithIdentationsOnEachDepthLevel();
         TheMatrix();
     }
 
+    private static void TreeWithIdentationsOnEachDepthLevel()
+    {
+        Tree<int> tree = new Tree<int>(7,
+            new Tree<int>(12, 
+                new Tree<int>(18),
+                new Tree<int>(23),
+                new Tree<int>(50)),
+            new Tree<int>(11),
+            new Tree<int>(16,
+                new Tree<int>(88),
+                new Tree<int>(5,
+                    new Tree<int>(81))));
+
+        Console.WriteLine(tree.GetTreeAsStringWithIdentation());
+    }
+
+    // Example TheMatrix input (more in './Matrix/task.md'):
+    // 5 3  
+    // a a a  
+    // a a a  
+    // a b a  
+    // a b a  
+    // a b a  
+    // x  
+    // 0 0 
     private static void TheMatrix()
     {
         TheMatrix theMatrix = BuildTheMatrix();
