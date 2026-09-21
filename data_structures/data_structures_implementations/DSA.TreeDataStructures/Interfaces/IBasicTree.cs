@@ -1,4 +1,4 @@
-namespace DSA.BasicTreeDataStructure.Interfaces;
+namespace DSA.TreeDataStructures.Interfaces;
 
 public interface IBasicTree<T>
 {

@@ -1,6 +1,6 @@
-﻿using DSA.BasicTreeDataStructure.Interfaces;
+﻿using DSA.TreeDataStructures.Interfaces;
 
-namespace DSA.BasicTreeDataStructure;
+namespace DSA.TreeDataStructures;
 
 public class Program
 {

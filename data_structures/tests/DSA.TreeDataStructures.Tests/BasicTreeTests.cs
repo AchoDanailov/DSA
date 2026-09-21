@@ -1,5 +1,5 @@
-using DSA.BasicTreeDataStructure;
-using DSA.BasicTreeDataStructure.Interfaces;
+using DSA.TreeDataStructures;
+using DSA.TreeDataStructures.Interfaces;
 using DSA.TreeDataStructures.Tests.Utils;
 
 namespace DSA.TreeDataStructures.Tests;

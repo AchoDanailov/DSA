@@ -1,4 +1,4 @@
-namespace DSA.BasicTreeDataStructure;
+namespace DSA.TreeDataStructures;
 
 internal static class ExceptionMessages
 {
