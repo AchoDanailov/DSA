@@ -37,7 +37,10 @@ public class BasicTree<T> : IBasicTree<T>
         {
             BasicTree<T> current = queue.Dequeue();
             if (current.Value == null)
-                throw new InvalidOperationException(ExceptionMessages.TreeNodeCanNotBeEmpty);
+            {
+                throw new InvalidOperationException(
+                        ExceptionMessages.BasicTree.TreeNodeCanNotBeEmpty);
+            }
             
             orderBfs.Add(current.Value);
 
@@ -65,7 +68,10 @@ public class BasicTree<T> : IBasicTree<T>
         {
             BasicTree<T> current = queue.Dequeue();
             if (current.Value == null)
-                throw new InvalidOperationException(ExceptionMessages.TreeNodeCanNotBeEmpty);
+            {
+                throw new InvalidOperationException(
+                        ExceptionMessages.BasicTree.TreeNodeCanNotBeEmpty);
+            }
             
             bool targetNodeFound = current.Value!.Equals(targetValue);
             if (targetNodeFound)
@@ -88,7 +94,10 @@ public class BasicTree<T> : IBasicTree<T>
         {
             BasicTree<T> current = queue.Dequeue();
             if (current.Value == null)
-                throw new InvalidOperationException(ExceptionMessages.TreeNodeCanNotBeEmpty);
+            {
+                throw new InvalidOperationException(
+                        ExceptionMessages.BasicTree.TreeNodeCanNotBeEmpty);
+            }
             
             bool targetNodeFound = current.Value.Equals(targetValue);
             if (targetNodeFound)
@@ -116,7 +125,10 @@ public class BasicTree<T> : IBasicTree<T>
     private static IBasicTree<T> FindAndRemoveTargetDfs(BasicTree<T> current, T targetValue)
     {
         if (current.Value == null)
-            throw new InvalidOperationException(ExceptionMessages.TreeNodeCanNotBeEmpty);
+        {
+            throw new InvalidOperationException(
+                    ExceptionMessages.BasicTree.TreeNodeCanNotBeEmpty);
+        }
         
         if (current.Value.Equals(targetValue))
         {
@@ -149,7 +161,10 @@ public class BasicTree<T> : IBasicTree<T>
     private static void DoDfs(BasicTree<T> tree, ICollection<T> result)
     {
         if (tree.Value == null)
-            throw new InvalidOperationException(ExceptionMessages.TreeNodeCanNotBeEmpty);
+        {
+            throw new InvalidOperationException(
+                    ExceptionMessages.BasicTree.TreeNodeCanNotBeEmpty);
+        }
         
         result.Add(tree.Value);
         
