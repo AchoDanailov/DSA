@@ -1,7 +1,8 @@
 using System.Text;
+using DSA.TreeDataStructures.Common;
 using DSA.TreeDataStructures.Interfaces;
 
-namespace DSA.TreeDataStructures;
+namespace DSA.TreeDataStructures.Heap;
 
 public class MaxBinaryHeap<T> : IMaxBinaryHeap<T>
     where T : IComparable<T>

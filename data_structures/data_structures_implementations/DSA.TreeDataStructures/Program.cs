@@ -1,4 +1,6 @@
 ﻿using DSA.TreeDataStructures.Interfaces;
+using DSA.TreeDataStructures.BinarySearchTree;
+using DSA.TreeDataStructures.Heap;
 
 namespace DSA.TreeDataStructures;
 
@@ -6,7 +8,19 @@ public class Program
 {
     public static void Main()
     {
-        MaxBinaryHeapDemo();   
+        BinarySearchTreeDemo();
+    }
+
+    private static void BinarySearchTreeDemo()
+    {
+        IBinarySearchTree<int> bst = new BinarySearchTree<int>();
+        int[] arr = new int[]{ 50, 30, 70, 20, 40, 60, 80, 75 };
+        Array.ForEach(arr, e => bst.Add(e));
+
+        bst.Remove(50);
+
+        IEnumerable<int> nums = bst.GetAllValueInOrder();
+        Console.WriteLine(string.Join(", ", nums.ToArray()));
     }
 
     private static void MaxBinaryHeapDemo()

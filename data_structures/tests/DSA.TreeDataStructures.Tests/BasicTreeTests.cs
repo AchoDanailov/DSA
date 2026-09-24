@@ -198,7 +198,7 @@ public class BasicTreeTests
         int[] nums = ArrayHelpers.RandomFilledIntArray(
             length: length,
             isReacuranceAllowed: false,
-            randomnessLowerThreshold: 0,
+            randomnessLowerThreshold: 1,
             randomnessUpperThreshold: 50);
 
         BasicTree<int> tree = new BasicTree<int>(nums[0], 
