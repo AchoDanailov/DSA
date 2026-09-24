@@ -25,22 +25,21 @@ internal static class ArrayHelpers
         int[] arr = new int[length];
         for (int i = 0; i < arr.Length; i++)
         {
-            arr[i] = Random.Shared.Next(
+            int numToAdd = Random.Shared.Next(
                 minValue: randomnessLowerThreshold,
                 maxValue: randomnessUpperThreshold);
 
             if (!isReacuranceAllowed)
             {
-                for (int j = i - 1; j >= 0; j--)
+                while (arr.Take(i).Contains(numToAdd))
                 {
-                    while (arr[i] == arr[j])
-                    {
-                        arr[i] = Random.Shared.Next(
+                    numToAdd = Random.Shared.Next(
                             minValue: randomnessLowerThreshold,
                             maxValue: randomnessUpperThreshold);
-                    }
                 }
             }
+
+            arr[i] = numToAdd;
         }
 
         return arr;
