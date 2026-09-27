@@ -1,4 +1,5 @@
 using System.Text;
+
 using DSA.TreeDataStructures.Common;
 using DSA.TreeDataStructures.Interfaces;
 
@@ -60,7 +61,7 @@ public class BinaryTree<T> : IBinaryTree<T>
     }
 
     public IEnumerable<IBinaryTree<T>> PostOrder()
-{
+    {
         ICollection<IBinaryTree<T>> resultList 
             = new List<IBinaryTree<T>>();
 
@@ -77,6 +78,99 @@ public class BinaryTree<T> : IBinaryTree<T>
         TraverseAndExecuteActionInOrder(this, action);
     }
 
+    public IBinaryTree<T> FindLowestCommonAncestor(T target1, T target2)
+    {
+        List<IBinaryTree<T>> node1Path = new List<IBinaryTree<T>>();
+        List<IBinaryTree<T>> node2Path = new List<IBinaryTree<T>>();
+
+        IBinaryTree<T>? node1 = Find(this, target1, node1Path);
+        if (node1 == null)
+        {
+            throw new ArgumentException(string.Format(
+                ExceptionMessages.BinaryTree.TargetNotFound, target1));
+        }
+        if (node1.Equals(this))
+        {
+            throw new ArgumentException(
+                ExceptionMessages.BinaryTree.RootDoesNotHaveAncestors);
+        }
+
+        IBinaryTree<T>? node2 = Find(this, target2, node2Path);
+        if (node2 == null)
+        {
+            throw new ArgumentException(string.Format(
+                ExceptionMessages.BinaryTree.TargetNotFound, target2));
+        }
+        if (node2.Equals(this))
+        {
+            throw new ArgumentException(
+                ExceptionMessages.BinaryTree.RootDoesNotHaveAncestors);
+        }
+
+        if (node1.Equals(node2))
+            return (node1 as BinaryTree<T>)!._parent!;
+
+        IBinaryTree<T> res = FindLowestCommonAncestor(node1Path, node2Path);
+        return res;
+    }
+
+    private static IBinaryTree<T>? Find(
+        IBinaryTree<T> currNode,
+        T target,
+        List<IBinaryTree<T>> path)
+    {
+        IBinaryTree<T>? res = null;
+        if (currNode.Value!.Equals(target))
+            return currNode;
+        
+        if (currNode.Left != null)
+        {
+            res = Find(currNode.Left, target, path);
+            if (res != null && res.Value!.Equals(target))
+            {
+                path.Add(currNode);
+                return res;
+            }
+        }
+
+        if (path.Count > 0)
+            path.RemoveAt(path.Count - 1);
+
+        if (currNode.Right != null)
+        {
+            res = Find(currNode.Right, target, path);
+            if (res != null && res.Value!.Equals(target))
+            {
+                path.Add(currNode);
+                return res;
+            }
+        }
+        
+        if (path.Count > 0)
+            path.RemoveAt(path.Count - 1);
+        
+        return res;
+    }
+
+    private static IBinaryTree<T> FindLowestCommonAncestor(
+        ICollection<IBinaryTree<T>> node1Path,
+        ICollection<IBinaryTree<T>> node2Path)
+    {
+        node1Path = node1Path.Reverse().ToArray();
+        node2Path = node2Path.Reverse().ToArray();
+        
+        int smallerOrEqualPathLength = Math.Min(node1Path.Count, node2Path.Count);
+        
+        int i = 0;
+        for ( ; i < smallerOrEqualPathLength; i++)
+        {
+            if (node1Path.ElementAt(i).Equals(node2Path.ElementAt(i)) == false)
+                break;
+        }
+
+        return node1Path.ElementAt(i - 1);
+    }
+
     private static void TraverseAndExecuteActionInOrder(
         IBinaryTree<T> currNode,
         Action<T> action)
@@ -85,7 +179,7 @@ public class BinaryTree<T> : IBinaryTree<T>
             TraverseAndExecuteActionInOrder(currNode.Left, action);
 
         action(currNode.Value);
-        
+
         if (currNode.Right != null)
             TraverseAndExecuteActionInOrder(currNode.Right, action);
     }

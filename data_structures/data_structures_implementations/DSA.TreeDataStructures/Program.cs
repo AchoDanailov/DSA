@@ -8,7 +8,31 @@ public class Program
 {
     public static void Main()
     {
-        BinarySearchTreeDemo();
+        BinaryTreeDemo();
+    }
+
+    private static void BinaryTreeDemo()
+    {
+        IBinaryTree<int> tree = GetBinaryTree();
+        IBinaryTree<int> res = tree.FindLowestCommonAncestor(69, 48);
+        Console.WriteLine(res!.Value.ToString());
+    }
+
+    private static IBinaryTree<int> GetBinaryTree()
+    {
+        BinaryTree<int> tree = new BinaryTree<int>(51,
+            new BinaryTree<int>(36,
+                new BinaryTree<int>(69, 
+                    new BinaryTree<int>(89),
+                    new BinaryTree<int>(48)),
+                new BinaryTree<int>(50,
+                    null,
+                    new BinaryTree<int>(58))),
+            new BinaryTree<int>(35,
+                new BinaryTree<int>(61),
+                new BinaryTree<int>(10)));
+
+        return tree;
     }
 
     private static void BinarySearchTreeDemo()
@@ -33,23 +57,5 @@ public class Program
         }
 
         Console.WriteLine(heap.ToString());
-    }
-
-    private static void BinaryTreeDemo()
-    {
-        IBinaryTree<int> tree = GetTree();
-        Console.WriteLine(string.Join(", ", tree.PostOrder().Select(e => e.Value)));
-    }
-
-    private static IBinaryTree<int> GetTree()
-    {
-        return new BinaryTree<int>(7,
-            new BinaryTree<int>(12,
-                new BinaryTree<int>(18),
-                new BinaryTree<int>(23)),
-            new BinaryTree<int>(11,
-                new BinaryTree<int>(88),
-                new BinaryTree<int>(5,
-                    new BinaryTree<int>(81))));
     }
 }

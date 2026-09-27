@@ -13,4 +13,5 @@ public interface IBinaryTree<T>
     IEnumerable<IBinaryTree<T>> PostOrder();
 
     void ForEachInOrder(Action<T> action);
+    IBinaryTree<T> FindLowestCommonAncestor(T target1, T target2);
 }

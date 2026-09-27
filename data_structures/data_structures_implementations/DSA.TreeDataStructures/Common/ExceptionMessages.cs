@@ -12,6 +12,12 @@ internal static class ExceptionMessages
         internal const string TreeNodeCanNotBeEmpty = "Tree node can not be empty";
     }
 
+    internal static class BinaryTree
+    {
+        internal const string TargetNotFound = "Node with the value {0} was not found.";
+        internal const string RootDoesNotHaveAncestors = "Root does not have ancestors.";
+    }
+
     internal static class Heap
     {
         internal const string HeapIsEmpty = "Heap is empty.";
