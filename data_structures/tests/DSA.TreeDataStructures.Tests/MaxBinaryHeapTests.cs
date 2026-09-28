@@ -1,3 +1,4 @@
+using DSA.TreeDataStructures.Heap;
 using DSA.TreeDataStructures.Tests.Utils;
 
 namespace DSA.TreeDataStructures.Tests;
