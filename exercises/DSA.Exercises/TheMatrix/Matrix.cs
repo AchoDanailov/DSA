@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace DSA.TreeDataStructures.Exercises.Matrix;
+namespace DSA.Exercises.TheMatrix;
 
 enum Direction
 {
@@ -10,7 +10,7 @@ enum Direction
     Right = 3
 }
 
-public class TheMatrix
+public class Matrix
 {
     private readonly char[][] _matrix;
     private readonly int _startRow;
@@ -18,7 +18,7 @@ public class TheMatrix
     private readonly char _fillChar;
     private readonly char _startChar;
     
-    public TheMatrix(char[][] matrix, char fillChar, int startRow, int startCol)
+    public Matrix(char[][] matrix, char fillChar, int startRow, int startCol)
     {
         if (fillChar == matrix[startRow][startCol])
         {

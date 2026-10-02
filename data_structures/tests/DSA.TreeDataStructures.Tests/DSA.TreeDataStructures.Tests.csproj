@@ -21,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\data_structures_implementations\DSA.TreeDataStructures\DSA.TreeDataStructures.csproj" />
-    <ProjectReference Include="..\..\exercises\DSA.TreeDataStructures.Exercises\DSA.TreeDataStructures.Exercises.csproj" />
+    <ProjectReference Include="..\..\implementations\DSA.TreeDataStructures\DSA.TreeDataStructures.csproj" />
   </ItemGroup>
 
 </Project>

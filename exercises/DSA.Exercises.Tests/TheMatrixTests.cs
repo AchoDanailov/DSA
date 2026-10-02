@@ -1,6 +1,7 @@
-using DSA.TreeDataStructures.Exercises.Matrix;
+using NUnit.Framework;
+using DSA.Exercises.TheMatrix;
 
-namespace DSA.TreeDataStructures.Tests;
+namespace DSA.Exercises.Tests;
 
 [TestFixture]
 public class TheMatrixTests
@@ -20,7 +21,7 @@ public class TheMatrixTests
         int startRow = 0;
         int startCol = 0;
 
-        var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
+        var theMatrix = new Matrix(matrix, fillChar, startRow, startCol);
         theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
@@ -47,7 +48,7 @@ public class TheMatrixTests
         int startRow = 2;
         int startCol = 1;
 
-        var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
+        var theMatrix = new Matrix(matrix, fillChar, startRow, startCol);
         theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
@@ -74,7 +75,7 @@ public class TheMatrixTests
         int startRow = 2;
         int startCol = 1;
 
-        var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
+        var theMatrix = new Matrix(matrix, fillChar, startRow, startCol);
         theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
@@ -101,7 +102,7 @@ public class TheMatrixTests
         int startRow = 4;
         int startCol = 1;
 
-        var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
+        var theMatrix = new Matrix(matrix, fillChar, startRow, startCol);
         theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();
@@ -128,7 +129,7 @@ public class TheMatrixTests
         int startRow = 4;
         int startCol = 0;
 
-        var theMatrix = new TheMatrix(matrix, fillChar, startRow, startCol);
+        var theMatrix = new Matrix(matrix, fillChar, startRow, startCol);
         theMatrix.SolveDfs();
 
         string str = theMatrix.ToOutputString();

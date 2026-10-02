@@ -1,7 +1,7 @@
 using DSA.TreeDataStructures.Common;
 using DSA.TreeDataStructures.Interfaces;
 
-namespace DSA.TreeDataStructures;
+namespace DSA.TreeDataStructures.BasicTree;
 
 public class BasicTree<T> : IBasicTree<T>
 {
@@ -117,13 +117,13 @@ public class BasicTree<T> : IBasicTree<T>
     }
 
     // O(n)
-    public IBasicTree<T> Remove(T targetValue)
+    public IBasicTree<T>? Remove(T targetValue)
     {
-        IBasicTree<T> result = FindAndRemoveTargetDfs(this, targetValue);
+        IBasicTree<T>? result = FindAndRemoveTargetDfs(this, targetValue);
         return result;
     }
 
-    private static IBasicTree<T> FindAndRemoveTargetDfs(BasicTree<T> current, T targetValue)
+    private static IBasicTree<T>? FindAndRemoveTargetDfs(BasicTree<T> current, T targetValue)
     {
         if (current.Value == null)
         {
@@ -149,14 +149,14 @@ public class BasicTree<T> : IBasicTree<T>
 
         foreach (BasicTree<T> child in current._children)
         {
-            IBasicTree<T> result = FindAndRemoveTargetDfs(child, targetValue);
-            if (result.Value!.Equals(targetValue))
+            IBasicTree<T>? result = FindAndRemoveTargetDfs(child, targetValue);
+            if (result != null && result.Value!.Equals(targetValue))
             {
                 return result;
             }
         }
 
-        return new BasicTree<T>();
+        return null;
     }
 
     private static void DoDfs(BasicTree<T> tree, ICollection<T> result)

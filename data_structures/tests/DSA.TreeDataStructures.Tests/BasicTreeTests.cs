@@ -1,4 +1,4 @@
-using DSA.TreeDataStructures;
+using DSA.TreeDataStructures.BasicTree;
 using DSA.TreeDataStructures.Interfaces;
 using DSA.TreeDataStructures.Tests.Utils;
 
@@ -131,19 +131,19 @@ public class BasicTreeTests
     }
 
     [Test]
-    public void Remove_WhenTargetNotFound_ShouldReturnEmpty()
+    public void Remove_WhenTargetNotFound_ShouldReturnNull()
     {
         // Arrange
         int largestPossibleNumContainedInTree = 50;
         (_, BasicTree<int> tree) = SetUpTreeWithFiveNodes(largestPossibleNumContainedInTree);
 
         // Act
-        IBasicTree<int> returned = tree.Remove(targetValue: Random.Shared.Next(
+        IBasicTree<int>? returned = tree.Remove(targetValue: Random.Shared.Next(
             minValue: largestPossibleNumContainedInTree + 1,
             maxValue: int.MaxValue));
         
         // Assert
-        Assert.That(returned.Value, Is.EqualTo((int) default!));
+        Assert.That(returned, Is.Null);
     }
 
     [TestCase(0)]
@@ -157,12 +157,12 @@ public class BasicTreeTests
         (int[] initialNums, BasicTree<int> tree) = SetUpTreeWithFiveNodes();
 
         // Act
-        IBasicTree<int> removed = tree.Remove(initialNums[targetIndex]);
+        IBasicTree<int>? removed = tree.Remove(initialNums[targetIndex]);
 
         // Assert
         if (targetIndex != 0)
         {
-            Assert.That(removed.Value, Is.EqualTo(initialNums[targetIndex]));
+            Assert.That(removed?.Value, Is.EqualTo(initialNums[targetIndex]));
             Assert.That(tree.Contains(removed.Value), Is.False);
         }
         else
@@ -179,13 +179,13 @@ public class BasicTreeTests
         (int[] initialNums, BasicTree<int> tree) = SetUpTreeWithFiveNodes();
         
         // Act
-        IBasicTree<int> removed = tree.Remove(initialNums[1]);
+        IBasicTree<int>? removed = tree.Remove(initialNums[1]);
         
         // Assert
-        int[] targetWithChildren = removed.GetOrderDFS().ToArray();
+        int[] targetWithChildren = removed?.GetOrderDFS().ToArray()!;
         
         Assert.That(targetWithChildren.Length, Is.Not.EqualTo(0));
-        Assert.That(tree.Contains(removed.Value), Is.False);
+        Assert.That(tree.Contains(removed!.Value), Is.False);
         Assert.That(removed.Value, Is.EqualTo(initialNums[1]));
         Assert.That(targetWithChildren[1], Is.EqualTo(initialNums[2]));
         Assert.That(targetWithChildren[2], Is.EqualTo(initialNums[3]));

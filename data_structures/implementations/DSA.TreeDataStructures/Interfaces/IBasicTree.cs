@@ -10,5 +10,5 @@ public interface IBasicTree<T>
     bool Contains(T targetValue);
 
     bool AddChild(IBasicTree<T> newTree, T targetValue);
-    IBasicTree<T> Remove(T targetValue);
+    IBasicTree<T>? Remove(T targetValue);
 }

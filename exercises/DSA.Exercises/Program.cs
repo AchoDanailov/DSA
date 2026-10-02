@@ -1,33 +1,16 @@
-﻿using DSA.TreeDataStructures.Exercises.Matrix;
-using DSA.TreeDataStructures.Exercises.TreeEachLevelOfDepthIndented;
+﻿using DSA.Exercises.TheMatrix;
 
-namespace DSA.TreeDataStructures.Exercises;
+namespace DSA.Exercises;
 
 public class Program
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        // TreeWithIdentationsOnEachDepthLevel();
+        // SymmetricParenthesisQueueStackProblem.SymmetricParenthesisQueueStackProblem.Solution();
         TheMatrix();
     }
-
-    private static void TreeWithIdentationsOnEachDepthLevel()
-    {
-        Tree<int> tree = new Tree<int>(7,
-            new Tree<int>(12, 
-                new Tree<int>(18),
-                new Tree<int>(23),
-                new Tree<int>(50)),
-            new Tree<int>(11),
-            new Tree<int>(16,
-                new Tree<int>(88),
-                new Tree<int>(5,
-                    new Tree<int>(81))));
-
-        Console.WriteLine(tree.GetTreeAsStringWithIdentation());
-    }
-
-    // Example TheMatrix input (more in './Matrix/task.md'):
+    
+    // Example Matrix input (more in './README.md'):
     // 5 3  
     // a a a  
     // a a a  
@@ -38,16 +21,16 @@ public class Program
     // 0 0 
     private static void TheMatrix()
     {
-        TheMatrix theMatrix = BuildTheMatrix();
+        Matrix theMatrix = BuildTheMatrix();
         SolveDfs(theMatrix);
         // SolveBfs(theMatrix);
         Console.WriteLine(theMatrix.ToOutputString());
     }
 
-    private static void SolveDfs(TheMatrix theMatrix) => theMatrix.SolveDfs();
-    private static void SolveBfs(TheMatrix theMatrix) => theMatrix.SolveBfs();
+    private static void SolveDfs(Matrix theMatrix) => theMatrix.SolveDfs();
+    private static void SolveBfs(Matrix theMatrix) => theMatrix.SolveBfs();
 
-    private static TheMatrix BuildTheMatrix()
+    private static Matrix BuildTheMatrix()
     {
         (int rows, int cols) = ParseInputWithTwoNums(Console.ReadLine());
         if (rows <= 0 || cols <= 0)
@@ -69,7 +52,7 @@ public class Program
             throw new ArgumentException("Invalid startRow or startCol.");
         }
 
-        return new TheMatrix(matrix, fillChar, startRow, startCol);
+        return new Matrix(matrix, fillChar, startRow, startCol);
     }
 
     private static char[][] BuildMatrix(int rows, int cols)

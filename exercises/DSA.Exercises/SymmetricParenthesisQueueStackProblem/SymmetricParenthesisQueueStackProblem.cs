@@ -1,7 +1,5 @@
-namespace DSA.LinearDataStructures.Exercises;
+namespace DSA.Exercises.SymmetricParenthesisQueueStackProblem;
 
-/*
-*/
 /// <summary>
 /// This class solves the following problem trough calling the <see cref="Solution"/> method.
 /// A sequence of parentheses is balanced if every open parenthesis can be paired uniquely with a closed parenthesis that occurs after the former.

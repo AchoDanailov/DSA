@@ -1,43 +1,39 @@
 # DSA Implementations & Exercises
 
-This repository holds the implementations of DSA exercises I am practicing on while only using an LSP and a debugger.  
-Using AI in this repository defeats its purpose.
+This repository holds the implementations of DSA exercises I am practicing on.   
+Using AI in this repository defeats the purpose of the repository.
 
 ---
 
-## Project Structure
+## Navigation
+- [Linear Data Structures](./data_structures/data_structures_implementations/DSA.LinearDataStructures)
+  - [ArrayList](./data_structures/data_structures_implementations/DSA.LinearDataStructures/ArrayList/)
+  - [SinglyLinkedListStack](./data_structures/data_structures_implementations/DSA.LinearDataStructures/Stack/)
+  - [DoublyLinkedListQueue](./data_structures/data_structures_implementations/DSA.LinearDataStructures/Queue/)
+  - [ArrayDeque](./data_structures/data_structures_implementations/DSA.LinearDataStructures/ArrayDeque/)
 
-```
-DSA/
-│
-├── data_structures/
-│   │
-│   ├── data_structures_implementations/
-│   │   ├── DSA.LinearDataStructures
-│   │   └── DSA.BasicTreeDataStructure
-│   │
-│   ├── exercises
-│   │   ├── DSA.LinearDataStructures.Exercises
-│   │   └── DSA.TreeDataStructures.Exercises
-│   │
-│   ├── tests
-│   │   ├── DSA.LinearDataStructures.Tests
-│   │   └── DSA.TreeDataStructures.Tests
-```
+- [Tree Data Structures](./data_structures/data_structures_implementations/DSA.TreeDataStructures)
+  - [BasicTree - AddChild, RemoveChild, GetOrder operations with BFS and DFS](./data_structures/data_structures_implementations/DSA.TreeDataStructures/BasicTree/)
+  - [BinaryTree - Pre, In, Post Orders Traversals, Lowest Common Ancestor](./data_structures/data_structures_implementations/DSA.TreeDataStructures/BinaryTree/)
+  - [MaxBinaryHeap with arbitrary inserts and removes](./data_structures/data_structures_implementations/DSA.TreeDataStructures/Heap/)
+  - [BinarySearchTree](./data_structures/data_structures_implementations/DSA.TreeDataStructures/BinarySearchTree/)
 
+- [Exercises](./exercises/DSA.Exercises/)
+  - [TheMatrix - a common algorithm for traversing a matrix DFS and BFS](./exercises/DSA.Exercises/TheMatrix/)
+  - [Finding The Lowest Common Ancestor In a Binary Tree](./data_structures/data_structures_implementations/DSA.TreeDataStructures/BinaryTree/)
 ---
 
 ## Personal objectives
 
 - Improving problem solving skills
-- Becoming intensely intentful with every decision
+- Becoming more intentful with decisions
 - Preparing for job interview skill evaluations on DSA
-- Reviewing DSA fundamentals (since I have gone through them once already when I was initially learning to code)
+- Reviewing DSA fundamentals
 - Going beyond fundamentals
 
 ---
 
 ## Personal motivations
 
-More than once I have been told by mentors that DSA problems level up your skills, and they raise your ceiling up.  
+More than once I have been told that DSA problems level up your skills, and they raise your ceiling up.  
 This is my formal time of studying and practicing DSA problems.
