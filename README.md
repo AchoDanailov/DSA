@@ -21,6 +21,7 @@ Using AI in this repository defeats the purpose of the repository.
 - [Exercises](./exercises/DSA.Exercises/)
   - [TheMatrix - a common algorithm for traversing a matrix DFS and BFS](./exercises/DSA.Exercises/TheMatrix/)
   - [Finding The Lowest Common Ancestor In a Binary Tree](./data_structures/implementations/DSA.TreeDataStructures/BinaryTree/)
+  - [Recursion - Common Recursion Exercises](./exercises/python/recursion/)
 ---
 
 ## Personal objectives

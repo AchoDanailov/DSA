@@ -9,7 +9,7 @@
     <Project Path="data_structures/tests/DSA.TreeDataStructures.Tests/DSA.TreeDataStructures.Tests.csproj" />
   </Folder>
   <Folder Name="/exercises/">
-    <Project Path="exercises/DSA.Exercises/DSA.Exercises.csproj" />
-    <Project Path="exercises/DSA.Exercises.Tests/DSA.Exercises.Tests.csproj" />
+    <Project Path="exercises/C#/DSA.Exercises.Tests/DSA.Exercises.Tests.csproj" />
+    <Project Path="exercises/C#/DSA.Exercises/DSA.Exercises.csproj" />
   </Folder>
 </Solution>
