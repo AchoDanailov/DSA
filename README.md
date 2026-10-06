@@ -22,6 +22,9 @@ Using AI in this repository defeats the purpose of the repository.
   - [TheMatrix - a common algorithm for traversing a matrix DFS and BFS](./exercises/DSA.Exercises/TheMatrix/)
   - [Finding The Lowest Common Ancestor In a Binary Tree](./data_structures/implementations/DSA.TreeDataStructures/BinaryTree/)
   - [Recursion - Common Recursion Exercises](./exercises/python/recursion/)
+
+- [LeetCode](./LeetCode/)
+    - [TwoSum](./LeetCode/two_sum.py)
 ---
 
 ## Personal objectives
