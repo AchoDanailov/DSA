@@ -24,7 +24,6 @@ Using AI in this repository defeats the purpose of the repository.
   - [Recursion - Common Recursion Exercises](./exercises/python/recursion/)
 
 - [LeetCode](./LeetCode/)
-    - [TwoSum](./LeetCode/two_sum.py)
 ---
 
 ## Personal objectives
